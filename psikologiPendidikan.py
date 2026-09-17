@@ -10,9 +10,9 @@ if "kumpulan" not in st.session_state:
 
 def kover():
     tulisan_html='''
-    <iframe src='https://martin-bernard26.github.io/psikologiPendidikan/kover.html' style='width:100%; height:1000px'></iframe>
+    <iframe src='https://martin-bernard26.github.io/psikologiPendidikan/kover.html' style='width:100%; height:1500px'></iframe>
     '''
-    st.components.v1.html(tulisan_html,height=1000)
+    st.components.v1.html(tulisan_html,height=1500)
 
 def pengenalan():
     tulisan_html='''
