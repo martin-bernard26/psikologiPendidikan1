@@ -3,16 +3,16 @@ import streamlit as st
 st.set_page_config(layout="wide")
 
 if "kumpulan" not in st.session_state:
-    st.session_state['kumpulan']={'judul':True,'rps':False, 'pertemuan1':False}
+    st.session_state['kumpulan']={'judul':True,'rps':False, 'pertemuan1':False,'pertemuan2':False}
 
 
 #=======================
 
 def kover():
     tulisan_html='''
-    <iframe src='https://martin-bernard26.github.io/psikologiPendidikan/kover.html' style='width:100%; height:1500px'></iframe>
+    <iframe src='https://martin-bernard26.github.io/psikologiPendidikan/kover.html' style='width:100%; height:1000px'></iframe>
     '''
-    st.components.v1.html(tulisan_html,height=1500)
+    st.components.v1.html(tulisan_html,height=1000)
 
 def pengenalan():
     tulisan_html='''
@@ -44,6 +44,12 @@ def materi1():
             '''
             st.components.v1.html(tulisan_html,height=1500)
 
+def materi2():
+    tulisan_html='''
+    <iframe src='https://martin-bernard26.github.io/psikologiPendidikan/pertemuan2' style='width:100%; height:1000px'></iframe>
+    '''
+    st.components.v1.html(tulisan_html,height=1000)
+
 
 #=======================
 
@@ -53,19 +59,24 @@ if st.session_state['kumpulan']['rps']:
     pengenalan()
 if st.session_state['kumpulan']['pertemuan1']:
     materi1()
-
+if st.session_state['kumpulan']['pertemuan2']:
+    materi2()
 #=========================
 
 if st.sidebar.button("Bagian Depan"):
-    st.session_state['kumpulan']={'judul':True,'rps':False, 'pertemuan1':False}
+    st.session_state['kumpulan']={'judul':True,'rps':False, 'pertemuan1':False, 'pertemuan2':False}
     st.rerun()
 
 if st.sidebar.button("Rencana Pembelajaran Semester"):
-    st.session_state['kumpulan']={'judul':False,'rps':True, 'pertemuan1':False}
+    st.session_state['kumpulan']={'judul':False,'rps':True, 'pertemuan1':False, 'pertemuan2':False}
     st.rerun()
 
 if st.sidebar.button("Pertemuan 1"):
-    st.session_state['kumpulan']={'judul':False,'rps':False, 'pertemuan1':True}
+    st.session_state['kumpulan']={'judul':False,'rps':False, 'pertemuan1':True, 'pertemuan2':False}
+    st.rerun()
+
+if st.sidebar.button("Pertemuan 2"):
+    st.session_state['kumpulan']={'judul':False,'rps':False, 'pertemuan1':False, 'pertemuan2':True}
     st.rerun()
     
     
